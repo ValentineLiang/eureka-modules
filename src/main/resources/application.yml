@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: eureka-service
+
+eureka:
+  instance:
+    hostname: localhost
+    # eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30秒
+    leaseRenewalIntervalInSeconds: 60
+  client:
+    #registerWithEureka实例是否在eureka服务器上注册自己的信息以供其他服务发现，默认为true
+    registerWithEureka: false
+    #fetchRegistry此客户端是否获取eureka服务器注册表上的注册信息，默认为true
+    fetchRegistry: false
+    serviceUrl.defaultZone: http://valentine:5201314@localhost:6001/eureka/
+
+security:
+  user:
+    name: valentine
+    password: 5201314
+
+server:
+  port: 6001
